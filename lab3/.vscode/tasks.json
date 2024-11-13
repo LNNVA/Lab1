@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build C Library",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-shared",              // Создание динамической библиотеки
+                "-o", "libtest.so",     // Имя выходного файла библиотеки
+                "-fPIC",                // Независимый код для динамической библиотеки
+                "calculate_primes.c"    // Исходный файл
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Сборка библиотеки libtest.so из файла calculate_primes.c"
+        }
+    ]
+}
